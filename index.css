@@ -1,0 +1,209 @@
+:root{
+    --small-font-size:12px;
+    --medium-font-size:14px;
+    --large-font-size:22px;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+
+
+body{
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1c1c1c;
+}
+
+header, section{
+    min-width: 550px;
+}
+
+header{
+    height: 208px;
+    background-image:linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.7)
+      ), url(./src/background.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center 25%;
+}
+
+header nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+
+h2{
+    font-size: 42px;
+    font-weight: 700;
+    color: #fff;
+}
+
+header a{
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+}
+
+.search-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 40px;
+    margin-top: -20px;
+    border-radius: 20px;
+    color: #A5A5A5;
+    z-index: 1;
+}
+
+.search-bar{
+    display: flex;
+    align-items: center;
+}
+
+input{
+    height: 100%;
+    width: 342px;
+    padding: 0;
+    padding-left: 40px;
+    margin: 0;
+    outline: none;
+    border: none;
+    background-color: #2E2E2F;
+    color: #A5A5A5;
+}
+
+.search-container i{
+    position: absolute;
+    pointer-events: none;
+    padding-left: 15px;
+}
+
+button{
+    height: 100%;
+    outline: none;
+    border: none;
+    background-color: #4B4B4B;
+    color: #A5A5A5;
+    padding: 0 25px;
+}
+
+.container{
+    color: #2E2E2F;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    min-height: 80vh;
+    text-align: center;
+    background-color: #121212;
+    margin-top: -20px;
+    padding-top: 80px;
+    width: 500px;
+}
+
+.container .item{
+    color: #fff;
+    display: grid;
+    text-align: left;
+    border-bottom: 1px solid #2C2C2C;
+    column-gap: 15px;
+    grid-template-columns: 120px 50px 70px 40px 120px;
+    grid-template-rows: repeat(4, 50px);
+    grid-template-areas: 
+    "poster title title rating rating"
+    "poster time genre genre watchlist"
+    "poster description description description description"
+    "poster . . . .";
+}
+
+.movie-poster {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    grid-area: poster;
+}
+
+.movie-title{
+    grid-area: title;
+    align-self: center;
+    font-size: var(--large-font-size);
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.imdb-container{
+    display: flex;
+    justify-content: flex-start;
+    gap: 5px;
+    align-self: center;
+    grid-area: rating;
+    font-size: var(--small-font-size);
+}
+
+.movie-time{
+    grid-area: time;
+    align-self: center;
+    font-size: var(--small-font-size);
+}
+
+.movie-genre{
+    grid-area: genre;
+    align-self: center;
+    font-size: var(--small-font-size);
+}
+
+.watchList-container{
+    display: flex;
+    justify-content: flex-start;
+    align-self: center;
+    gap: 5px;
+    grid-area: watchlist;
+    font-size: var(--small-font-size);
+    cursor: pointer;
+}
+
+.movie-description{
+    grid-area: description;
+    align-self: center;
+    font-size: var(--medium-font-size);
+    color: #A5A5A5;
+    line-height: 1.5;
+    overflow: hidden;
+    max-width: 100%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+.message{
+    color: #fff;
+    text-align: center;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin: 50px 0;
+    transition:visibility 3000ms;
+}
+
+.message-item{
+    width: 50%;
+    background-color: #4B4B4B;
+    height: 75px;
+    display: flex;
+    align-items: center;
+}
+
+
