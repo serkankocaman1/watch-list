@@ -104,7 +104,7 @@ button{
     align-items: center;
     flex-direction: column;
     gap: 15px;
-    min-height: 80vh;
+    min-height: 70vh;
     text-align: center;
     background-color: #121212;
     margin-top: -20px;
@@ -166,11 +166,19 @@ button{
 .watchList-container{
     display: flex;
     justify-content: flex-start;
-    align-self: center;
+    align-items: center;
     gap: 5px;
     grid-area: watchlist;
     font-size: var(--small-font-size);
     cursor: pointer;
+}
+
+.watchList-container i{
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 2%;
+    color: #121212;
+    font-size: 12px;
 }
 
 .movie-description{
@@ -206,4 +214,39 @@ button{
     align-items: center;
 }
 
+.explorer-item{
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    justify-self: center;
+}
 
+.explorer-item p{
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+.search-text{
+    font-size: 18px;
+}
+
+.container a{
+    color:#A5A5A5;
+    text-align: left;
+}
+
+.add-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    gap: 15px;
+    width: 50%;
+}
+
+.add-container i{
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 2%;
+    color: #121212;
+}

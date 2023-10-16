@@ -2,6 +2,8 @@ const container = document.querySelector(".container")
 
 const watchListArray = JSON.parse(localStorage.getItem("watchList"))
 
+console.log(watchListArray)
+
 containerItems = ""
 
 async function watchListAPI(element, index){
@@ -32,10 +34,23 @@ async function watchListAPI(element, index){
         container.innerHTML = containerItems
 }
 
-watchListArray.forEach((element, index) => {
-    console.log(element, index)
-    const movies = watchListAPI(element, index)
-});
+
+if(watchListArray.length > 0){
+    watchListArray.forEach((element, index) => {
+        console.log(element, index)
+        const movies = watchListAPI(element, index)
+    });
+}else{
+    container.innerHTML = `
+    <p class="search-text">Your watchlist is looking a little empty...</p>
+    <a class="add-container" href="/index.html">
+    <i class="fa-solid fa-plus"></i>
+    <p>Let’s add some movies!</p>
+    </a>
+    `
+}
+
+
 
 document.addEventListener("click", e => {
     if(e.target.parentElement.className === "watchList-container"){

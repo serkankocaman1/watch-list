@@ -48,6 +48,10 @@ async function movieApp(){
             container.innerHTML = containerItems 
             messageAlert = document.querySelectorAll(".message")
         });
+    }else{
+        container.innerHTML = `
+        <p class="search-text">Unable to find what you’re looking for. Please try another search.</p>
+        `
     }
 } 
 
